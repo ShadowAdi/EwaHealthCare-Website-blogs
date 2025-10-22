@@ -1,40 +1,9 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const faqData = [
-  {
-    id: 1,
-    question: "How long does it take?",
-    answer:
-      "Most reports are ready within 48–72 hours, depending on case complexity.",
-  },
-  {
-    id: 2,
-    question: "Is my information confidential?",
-    answer:
-      "Yes, all your medical information is protected under strict privacy laws and handled with the utmost confidentiality by our licensed specialists.",
-  },
-  {
-    id: 3,
-    question: "Can I choose a specialist?",
-    answer:
-      "Absolutely, you can select a specialist from our network based on your specific needs, or we can recommend the best match for your case.",
-  },
-  {
-    id: 4,
-    question: "How much does a second opinion cost?",
-    answer:
-      "Our second opinion service starts at an affordable flat rate, with transparent pricing. No hidden fees—get a quote during your initial submission.",
-  },
-  {
-    id: 5,
-    question: "What if opinions differ?",
-    answer:
-      "If opinions differ, we provide a comprehensive comparison report and facilitate a discussion to help you make the most informed decision.",
-  },
-];
 
-const Seventh = () => {
+
+const Seventh = ({faqData}) => {
   const [openId, setOpenId] = useState(1);
 
   const toggleFAQ = (id) => {
