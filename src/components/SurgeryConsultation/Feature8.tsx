@@ -1,42 +1,10 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const faqData = [
-  {
-    id: 1,
-    question: "What is included in a wellness program?",
-    answer: "Fitness, nutrition, mental health support, preventive care",
-  },
-  {
-    id: 2,
-    question: "Can programs be customized?",
-    answer:
-      "Yes, our programs are fully customizable to meet your organization's specific needs and goals. We work closely with you to design a wellness program that fits your company culture and employee requirements.",
-  },
-  {
-    id: 3,
-    question: "Are programs online or onsite?",
-    answer:
-      "We offer both online and onsite options. You can choose virtual wellness sessions, in-person workshops, or a hybrid approach that combines both formats for maximum flexibility and engagement.",
-  },
-  {
-    id: 4,
-    question: "How do you track employee progress?",
-    answer:
-      "We provide comprehensive tracking tools including health assessments, progress dashboards, participation metrics, and regular reports to help you monitor employee engagement and wellness outcomes.",
-  },
-  {
-    id: 5,
-    question: "What is the cost of a program?",
-    answer:
-      "Program costs vary based on company size, services selected, and customization level. Contact us for a personalized quote tailored to your organization's needs and budget.",
-  },
-];
+const Feature8 = ({faqData}:{faqData:{id:number,question:string,answer:string}[]}) => {
+  const [openId, setOpenId] = useState<number|null>(1);
 
-const Feature8 = () => {
-  const [openId, setOpenId] = useState(1);
-
-  const toggleFAQ = (id) => {
+  const toggleFAQ = (id:number|null) => {
     setOpenId(openId === id ? null : id);
   };
 
