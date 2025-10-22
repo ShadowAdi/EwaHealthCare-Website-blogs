@@ -63,15 +63,37 @@ const Footer = () => {
 
             </div>
 
-            <div className='flex flex-row gap-2 justify-center -mt-10 md:justify-start md:items-start'>
-              <div className="text-[#1E1028] text-base md:text-lg font-bold mt-5 md:mt-4">
-                <p>ISO Certified</p>
-              </div>
-              <div className="">
-                <img alt="ISO Certified" loading="lazy" className="w-16 h-[10]"
-                  src={`${domainName}/images/ISO1.jpg`} />
-              </div>
-            </div>
+         <div className="flex flex-col md:flex-row items-center md:items-start justify-center md:justify-start gap-8 mt-10">
+  {/* ISO Certified */}
+  <div className="flex items-center gap-4 bg-white shadow-md rounded-xl px-4 py-3 border border-gray-100 hover:shadow-lg transition duration-300">
+    <div className="flex flex-col text-center md:text-left">
+      <p className="text-[#1E1028] text-lg font-semibold">ISO Certified</p>
+      <p className="text-sm text-gray-500">Trusted quality standards</p>
+    </div>
+    <img
+      alt="ISO Certified"
+      loading="lazy"
+      className="w-16 h-auto rounded-md"
+      src={`${domainName}/images/ISO1.jpg`}
+    />
+  </div>
+
+  {/* DPIIT Certified */}
+  <div className="flex items-center gap-4 bg-white shadow-md rounded-xl px-4 py-3 border border-gray-100 hover:shadow-lg transition duration-300">
+    <div className="flex flex-col text-center md:text-left">
+      <p className="text-[#1E1028] text-lg font-semibold">DPIIT Certified</p>
+      <p className="text-sm text-gray-500">Recognized by Government of India</p>
+    </div>
+    <img
+      alt="DPIIT Certified"
+      loading="lazy"
+      className="w-16 h-auto rounded-md"
+      src={`${domainName}/images/DPIIT_logo.png`}
+    />
+  </div>
+</div>
+
+
 
           </div>
         </div>
@@ -112,3 +134,4 @@ const Footer = () => {
 };
 
 export default Footer;
+
