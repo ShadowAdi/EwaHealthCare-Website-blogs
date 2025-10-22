@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: 
+Disallow: /login/
+
+Sitemap: https://myewacare.com/sitemap.xml
