@@ -6,35 +6,48 @@ const faqData = [
   {
     id: 1,
     question: "Select Your Specialty:",
-    answer: "Browse through our comprehensive list of medical specialties.",
+    answer:
+      "Choose your surgical specialty based on your health needs (Orthopedic, Cardiac, Bariatric, Oncology, etc.)",
   },
   {
     id: 2,
     question: "Upload Medical Reports:",
     answer:
-      "Securely upload your relevant medical documents, test results, and previous consultation reports.",
+      "Securely upload scans, lab reports, and other medical records for the surgeon’s review.",
   },
   {
     id: 3,
     question: "Share Personal & Health Details:",
-    answer: "Get a detailed second opinion report in 48-72 hours. ",
+    answer:
+      "Fill in basic information and health history to help the surgeon understand your case",
   },
   {
     id: 4,
     question: "Schedule Consultation:",
-    answer: "Choose a convenient time slot from our available appointments. ",
+    answer:
+      "Pick a convenient date and time for your virtual or in-person consultation.",
   },
   {
     id: 5,
     question: "Receive Personalized Care Plan:",
     answer:
-      "After your consultation, receive a detailed treatment plan tailored to your specific condition. ",
+      "Get a detailed surgical advice report, including guidance on insurance, financing, and post-surgery care.",
   },
 ];
 
 const Feature4Service3 = () => {
   const [openId, setOpenId] = useState(1);
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const hoverFAQ = (id) => {
+    setOpenId(openId === id ? null : id);
+  };
+
+  const unhoverFAQ = (id) => {
+    if (openId === id) {
+      setOpenId(null);
+    }
+  };
 
   const toggleFAQ = (id) => {
     setOpenId(openId === id ? null : id);
@@ -91,6 +104,8 @@ const Feature4Service3 = () => {
             >
               <button
                 onClick={() => toggleFAQ(faq.id)}
+                onMouseEnter={() => hoverFAQ(faq.id)}
+                onMouseLeave={() => unhoverFAQ(faq.id)}
                 className="w-full flex items-center justify-between text-left group cursor-pointer"
                 aria-expanded={openId === faq.id}
               >
@@ -98,7 +113,9 @@ const Feature4Service3 = () => {
                   <div className="flex items-start space-x-2 sm:space-x-3">
                     <span
                       className={`text-xl sm:text-2xl lg:text-3xl flex-shrink-0 leading-none relative ${
-                        openId !== faq.id ? "text-[#02989D80]" : "text-[#02989D]"
+                        openId !== faq.id
+                          ? "text-[#02989D80]"
+                          : "text-[#02989D]"
                       }`}
                     >
                       {faq.id.toString().padStart(2, "0")}
@@ -113,7 +130,9 @@ const Feature4Service3 = () => {
                   <div className="flex flex-col items-start space-y-2 sm:space-y-3 flex-1">
                     <span
                       className={`text-base sm:text-lg lg:text-xl font-semibold leading-tight ${
-                        openId === faq.id ? "text-[#02989D]" : "text-[#2E2F3566]"
+                        openId === faq.id
+                          ? "text-[#02989D]"
+                          : "text-[#2E2F3566]"
                       }`}
                     >
                       {faq.question}
@@ -125,7 +144,7 @@ const Feature4Service3 = () => {
                           initial={{ height: 0, opacity: 0 }}
                           animate={{ height: "auto", opacity: 1 }}
                           exit={{ height: 0, opacity: 0 }}
-                          transition={{ duration: 0.3 }}
+                          transition={{ duration: 0.6, ease: "easeInOut" }}
                           className="overflow-hidden w-full"
                         >
                           <p className="text-[#58595D] text-sm sm:text-base lg:text-lg font-medium leading-relaxed">

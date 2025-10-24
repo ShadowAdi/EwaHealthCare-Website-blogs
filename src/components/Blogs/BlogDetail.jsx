@@ -118,10 +118,10 @@ const BlogDetail = () => {
   return (
     <>
       <HeroHeader />
-      <div className="w-full px-4 flex flex-col gap-12">
-        <div className="container mx-auto px-2 flex flex-col justify-center lg:flex-row gap-12 md:gap-8 mt-12 md:mt-16">
+      <div className="container sm:w-[60%] mx-auto w-full px-4 flex flex-col gap-12">
+        <div className=" mx-auto  flex flex-col justify-center  space-y-6 md:gap-8 mt-12 md:mt-16">
           {/* Left */}
-          <div className="flex-1 flex flex-col justify-center gap-8 md:gap-12">
+          <div className="flex-1 flex flex-col justify-center gap-2 md:gap-4">
             <div className="flex flex-col gap-4 md:gap-6">
               <h1 className="text-[1.75rem] md:text-[2.5rem] font-semibold">
                 {superBlog.title}
@@ -201,7 +201,7 @@ const BlogDetail = () => {
 
         {/* Blog Content */}
 
-        <div className="container mx-auto px-4 md:px-8">
+        <div className=" mx-auto px-4 md:px-8">
           {superBlog.isLocal ? (
             // Render local blog content directly (no image/content split)
             <div className="w-full text-[#4b4656] text-[17px] md:text-[18px] space-y-6">

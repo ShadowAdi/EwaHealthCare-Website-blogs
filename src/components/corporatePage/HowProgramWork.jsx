@@ -6,32 +6,32 @@ import ScheduleDemoModal from "../ScheduleDemoModal"; // adjust path if needed
 const faqData = [
   {
     id: 1,
-    question: "Submit Medical Info: ",
-    answer: "Upload reports, scans, and health history",
+    question: "Assess Needs:",
+    answer: "Evaluate your organization’s wellness goals and employee needs",
   },
   {
     id: 2,
-    question: "Specialist Review: ",
-    answer: "Expert doctors evaluate your case thoroughly",
+    question: "Customize Program:",
+    answer: "Design tailored wellness journeys (fitness, nutrition, mental health, preventive care)",
   },
   {
     id: 3,
-    question: "Receive Report: ",
-    answer: "Get a detailed second opinion report in 48–72 hours",
+    question: "Implement Activities:",
+    answer: "Onsite workshops, virtual sessions, wellness camps",
   },
   {
     id: 4,
-    question: "Virtual Consultation: ",
-    answer: "Discuss findings with a specialist (optional)",
+    question: "Track & Monitor:",
+    answer: "Progress dashboards, participation reports, and engagement analytics",
   },
   {
     id: 5,
-    question: "Ongoing Support: ",
-    answer: "Guidance on next steps and follow-ups",
+    question: "Ongoing Support:",
+    answer: "Follow-ups, expert advice, and program refinements",
   },
 ];
 
-const Fourth = () => {
+const HowProgramWork = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [animateCloseButton, setAnimateCloseButton] = useState(false);
   const [openId, setOpenId] = useState(1);
@@ -60,7 +60,7 @@ const Fourth = () => {
           {/* Left Side */}
           <div className="flex-1">
             <h2 className="text-2xl sm:text-2xl font-bold text-[#02989D]">
-              How Our Second Opinion Process Works
+              How Our Corporate Wellness Process Works
             </h2>
             <p className="text-lg text-gray-600 mb-8">
               Our{" "}
@@ -80,7 +80,7 @@ const Fourth = () => {
               onClick={() => setIsModalOpen(true)}
               className="bg-[#02998D] text-white px-6 py-3 rounded-full hover:bg-[#028177] transition-colors w-full lg:w-auto"
             >
-              Request Your Second Opinion
+              Request Your Corporate Wellness
             </button>
           </div>
 
@@ -161,4 +161,4 @@ const Fourth = () => {
   );
 };
 
-export default Fourth;
+export default HowProgramWork;
