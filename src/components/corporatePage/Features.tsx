@@ -20,7 +20,7 @@ const Features = () => {
         </p>
       </motion.div>
 
-      <div className="flex-1 w-full items-center justify-between grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 [&>*]:h-full">
         <FeaturesCard
           cardText="Fitness and physical activity programs"
           imagePath="/images/corporatePage/feat.png"

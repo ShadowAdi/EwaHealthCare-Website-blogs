@@ -55,15 +55,15 @@ export const blogData = [
     content: <ChildCancerWarningSigns />,
   },
   {
-    slug: "world-stroke-day-2025-understanding-causes-and-symptoms", 
-    imageSrc: `${blogDomainName}/images/BlogsContent/blog5.png`,
+    slug: "world-stroke-day-2025-causes-symptoms-prevention", 
+    imageSrc: `${blogDomainName}/images/BlogsContent/blog6New.png`,
     title: "World Stroke Day 2025: Understanding Causes and Symptoms",
     date: "2025-10-27",
     authorImage: `${blogDomainName}/src/assets/images/image.svg`,
     authorName: "Team Ewa Health",
     isLocal: true,
     altText:
-      "World Stroke Day 2025 awareness about causes and symptoms of stroke",
+      "World Stroke Day 2025 ",
     content: <WorldStrokeDay2025 />,
   },
 ];
