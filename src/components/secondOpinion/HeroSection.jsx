@@ -28,9 +28,7 @@ const HeroSection = () => {
           </h1>
 
           <p className="text-sm sm:text-base md:text-lg text-center md:text-left text-[#0C1F30] font-medium leading-relaxed sm:leading-7 md:leading-[28px] max-w-2xl">
-            Many patients seek second opinions for complex conditions like cancer,
-            surgery, or rare diseases. Our online service connects you with top
-            medical experts — no travel needed.
+            Access verified specialists to review your diagnosis, explore treatment options, and make confident healthcare decisions — all online.
           </p>
 
           {/* 🔥 Modal Button */}

@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import eight from "../../../public/images/secondOpinion/eight.png";
-
-const Eighth = () => {
+const ContactForm = () => {
   const [name, setName] = useState("");
   const [contact, setContact] = useState("");
   const [concern, setConcern] = useState("");
@@ -15,7 +14,6 @@ const Eighth = () => {
     e.preventDefault();
     console.log({ name, contact, concern, file });
   };
-
   return (
     <section
       className="py-12 px-4 sm:px-6 lg:px-12 relative"
@@ -33,7 +31,7 @@ const Eighth = () => {
         >
           <div className="w-full lg:w-[70%]  pl-12 py-6">
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-6 sm:mb-8 text-center lg:text-left">
-              Get Your Expert Second Opinion Today
+              Get Your Expert Multispeciality Surgery Consultations 
             </h2>
 
             <form onSubmit={handleSubmit} className="space-y-5">
@@ -64,33 +62,48 @@ const Eighth = () => {
                 />
               </div>
 
-              <div className="flex flex-col sm:flex-row items-center sm:items-center sm:space-x-4 bg-[#1FA2A7] border border-white rounded-xl p-3 sm:p-4 w-full sm:w-fit">
-                <label
-                  htmlFor="file-upload"
-                  className="text-white text-sm sm:text-base mb-2 sm:mb-0"
-                >
-                  Upload Medical Records:
-                </label>
+              <div className="flex flex-col sm:flex-row items-center sm:items-center sm:space-x-4 rounded-xl w-full sm:w-full">
                 <input
-                  type="file"
-                  onChange={handleFileChange}
-                  className="hidden"
-                  id="file-upload"
-                  multiple
+                  type="text"
+                  placeholder="Brief Medical Concern"
+                  value={concern}
+                  onChange={(e) => setConcern(e.target.value)}
+                  className=" p-3 sm:p-4 bg-[#1FA2A7] border border-white placeholder-white text-white rounded-xl focus:ring-2 focus:ring-cyan-500 focus:border-transparent focus:outline-transparent w-[40%]"
+                  required
                 />
-                <label
-                  htmlFor="file-upload"
-                  className="bg-white px-7 py-1 rounded-full cursor-pointer hover:bg-gray-100 transition-colors text-sm sm:text-base flex space-x-3 "
-                >
-                  <img  src="../../../public/images/secondOpinion/UploadMedIcon.svg" alt="image-upload-icon" className="mr-2"/>
-                  Choose File
-                </label>
-                {file && (
-                  <span className="text-sm text-gray-200 mt-2 sm:mt-0 sm:ml-2">
-                    {file.name}
-                  </span>
-                )}
+                <div className="flex w-[60%] items-center justify-around space-x-0.5  p-2 sm:p-3 px-0 sm:px-0 bg-[#1FA2A7] border border-white placeholder-white text-black rounded-xl focus:ring-2 focus:ring-cyan-500 focus:border-transparent focus:outline-transparent">
+                  <label
+                    htmlFor="file-upload"
+                    className="text-white text-sm sm:text-base mb-2 sm:mb-0 "
+                  >
+                    Upload Medical Records:
+                  </label>
+                  <input
+                    type="file"
+                    onChange={handleFileChange}
+                    className="hidden"
+                    id="file-upload"
+                    multiple
+                  />
+                  <label
+                    htmlFor="file-upload"
+                    className="bg-white  py-1 px-3 rounded-full cursor-pointer hover:bg-gray-100 transition-colors text-sm sm:text-base flex space-x-3 "
+                  >
+                    <img
+                      src="../../../public/images/secondOpinion/UploadMedIcon.svg"
+                      alt="image-upload-icon"
+                      className="mr-2"
+                    />
+                    Choose File
+                  </label>
+                  {file && (
+                    <span className="text-sm text-gray-200 mt-2 sm:mt-0 sm:ml-2">
+                      {file.name}
+                    </span>
+                  )}
+                </div>
               </div>
+
 <p className="text-[10px] italic text-white ">
     * Your information is confidential and securely stored.
 </p>
@@ -103,6 +116,7 @@ const Eighth = () => {
                 </button>
               </div>
             </form>
+        
           </div>
 
           <div className="w-full lg:w-[30%] flex justify-end">
@@ -118,4 +132,4 @@ const Eighth = () => {
   );
 };
 
-export default Eighth;
+export default ContactForm;

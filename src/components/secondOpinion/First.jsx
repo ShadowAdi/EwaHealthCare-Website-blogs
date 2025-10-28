@@ -1,16 +1,16 @@
-import doctor from "../../../public/images/secondOpinion/doctor.png";
+import doctor from "../../../public/images/secondOpinion/doctorNew.png";
 
 const First = () => {
   return (
     <section className="relative w-full bg-white py-12 sm:py-16 flex justify-center items-center">
-      <div className="flex flex-col md:flex-row items-center max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 gap-8 lg:gap-12">
+      <div className="flex flex-col md:flex-row items-center justify-start max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Image Section */}
-        <div className="relative w-56 sm:w-64 md:w-72 lg:w-80 flex justify-center">
+        <div className="relative w-56 sm:w-64 h-full md:w-72 lg:w-[70%] flex justify-start">
           <img
             src={doctor}
             alt="Doctor illustration"
-            className="relative w-full h-64 sm:h-80 object-contain z-10"
+            className="relative w-full h-64 sm:h-full object-contain max-h-[70vh] z-10"
           />
         </div>
 

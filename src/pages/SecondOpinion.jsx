@@ -66,7 +66,7 @@ export default function SecondOpinion() {
         <Fifth />
         <Sixth />
         <Seventh faqData={faqData}/>
-        {/* <Eighth /> */}
+        <Eighth />
         <Footer />
       </main>
     </>

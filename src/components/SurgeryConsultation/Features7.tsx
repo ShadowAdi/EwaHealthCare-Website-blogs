@@ -111,13 +111,6 @@ const Features7 = () => {
                 className="bg-[#02989D] rounded-2xl p-8 sm:p-12 shadow-lg relative z-10"
               >
                 <div className="flex flex-col sm:flex-row items-center gap-6">
-                  <div className="flex-shrink-0">
-                    <img
-                      src={testimonials[currentIndex].image}
-                      alt={testimonials[currentIndex].name}
-                      className="w-24 h-24 sm:w-40 sm:h-40 rounded-full object-cover"
-                    />
-                  </div>
 
                   <div className="flex-1 space-y-10 text-center sm:text-left">
                     <div className="flex flex-col items-start space-y-2">

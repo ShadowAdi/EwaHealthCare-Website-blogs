@@ -9,6 +9,7 @@ import Feature5Service3 from "../components/SurgeryConsultation/Feature5Service3
 import Feature4Service3 from "../components/SurgeryConsultation/Feature4Service3";
 import Features7 from "../components/SurgeryConsultation/Features7";
 import Feature8 from "../components/SurgeryConsultation/Feature8";
+import ContactForm from "../components/SurgeryConsultation/ContactForm";
 
 const faqData = [
   {
@@ -67,6 +68,8 @@ const SurgeryConsultation = () => {
         <Feature5Service3 />
         <Features7 />
         <Feature8 faqData={faqData} />
+                <ContactForm/>
+
       </main>
       <footer className="w-full">
         <Footer />

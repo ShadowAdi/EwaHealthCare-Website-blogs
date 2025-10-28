@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import strokeImage from "../../../../public/images/BlogsContent/blog6-1.jpg";
+import Blog6New from "../../../../public/images/BlogsContent/blog-6-1-new.jpg";
 import secondImage from "../../../../public/images/BlogsContent/blog6-2.jpg";
 
 const WorldStrokeDay2025 = () => {
@@ -57,9 +57,7 @@ const WorldStrokeDay2025 = () => {
         minutes — making it a medical emergency that requires immediate
         attention.
       </p>
-      <p className="mb-4">
-        There are two main types of stroke:
-      </p>
+      <p className="mb-4">There are two main types of stroke:</p>
       <ul className="list-disc pl-6 mb-4">
         <li>
           <strong>Ischemic Stroke:</strong> Caused by a blockage in the arteries
@@ -71,6 +69,14 @@ const WorldStrokeDay2025 = () => {
           vessel bursts, leading to bleeding in or around the brain.
         </li>
       </ul>
+
+        <div className="my-8">
+        <img
+          src={Blog6New}
+          alt="World Stroke Day 2025 illustration"
+          className="w-4/5 max-w-2xl rounded-lg shadow-md"
+        />
+      </div>
       <p className="mb-4">
         A <strong>Transient Ischemic Attack (TIA)</strong>, also known as a
         mini-stroke, serves as a warning sign that a full stroke may occur soon.
@@ -89,6 +95,9 @@ const WorldStrokeDay2025 = () => {
       </p>
 
       <h3 className="text-xl font-semibold mt-6 mb-3">1. Lifestyle Factors</h3>
+      <p className="mb-1">
+       Unhealthy habits can significantly increase the risk of stroke. These include: 
+      </p>
       <ul className="list-disc pl-6 mb-4">
         <li>Smoking or excessive alcohol use</li>
         <li>Poor diet high in saturated fats, salt, and sugar</li>
@@ -96,6 +105,9 @@ const WorldStrokeDay2025 = () => {
       </ul>
 
       <h3 className="text-xl font-semibold mt-6 mb-3">2. Medical Conditions</h3>
+       <p className="mb-1">
+       Several underlying health conditions raise stroke risk:  
+      </p>
       <ul className="list-disc pl-6 mb-4">
         <li>High blood pressure (the leading cause)</li>
         <li>Diabetes</li>
@@ -110,13 +122,6 @@ const WorldStrokeDay2025 = () => {
         <li>Advanced age (risk increases after 55)</li>
       </ul>
 
-      <div className="my-8">
-        <img
-          src={strokeImage}
-          alt="World Stroke Day 2025 illustration"
-          className="w-4/5 max-w-2xl rounded-lg shadow-md"
-        />
-      </div>
 
       {/* H2 */}
       <h2 className="text-2xl font-semibold mt-8 mb-3">
@@ -156,7 +161,9 @@ const WorldStrokeDay2025 = () => {
 
       <p className="mb-4">Other symptoms may include:</p>
       <ul className="list-disc pl-6 mb-4">
-        <li>Sudden numbness or weakness (especially on one side of the body)</li>
+        <li>
+          Sudden numbness or weakness (especially on one side of the body)
+        </li>
         <li>Difficulty understanding speech or confusion</li>
         <li>Sudden vision problems</li>
         <li>Severe headache with no known cause</li>
@@ -175,9 +182,12 @@ const WorldStrokeDay2025 = () => {
       </p>
       <p className="mb-4">
         Early diagnosis also helps identify underlying conditions — like
-        hypertension or diabetes — that could lead to another stroke. That’s why
-        regular health screenings and second medical opinions play a vital role
-        in long-term prevention.
+        hypertension or diabetes — that could lead to another stroke. <br />
+        That’s why regular health screenings and{" "}
+        <a className="text-blue-700 underline font-semibold" href="https://myewacare.com/second-opinion">
+          second medical opinions
+        </a>{" "}
+        play a vital role in long-term prevention.
       </p>
       <p className="mb-4">
         If you have a family history of stroke or experience any risk factors,
@@ -188,14 +198,20 @@ const WorldStrokeDay2025 = () => {
       <h2 className="text-2xl font-semibold mt-8 mb-3">
         Preventing Stroke — Small Steps, Big Difference
       </h2>
+      <p className="mb-1">
+        Stroke prevention starts with simple, everyday actions that keep your
+        heart and brain healthy: <br />
+      </p>
       <ul className="list-disc pl-6 mb-4">
-        <li>Maintain a balanced diet rich in fruits, vegetables, and whole grains.</li>
+        <li>
+          Maintain a balanced diet rich in fruits, vegetables, and whole grains.
+        </li>
         <li>Exercise regularly — even a 30-minute walk daily helps.</li>
         <li>Quit smoking and limit alcohol intake.</li>
         <li>Keep your blood pressure, sugar, and cholesterol in check.</li>
         <li>Manage stress through yoga, meditation, or mindfulness.</li>
         <li>
-          Schedule regular preventive health check-ups to detect issues early.
+          Schedule regular <a className="underline font-semibold text-blue-600" href="https://myewacare.com/our-services#ourpackages">preventive health check-ups</a> to detect issues early.
         </li>
       </ul>
 
@@ -242,9 +258,7 @@ const WorldStrokeDay2025 = () => {
           rel="noopener noreferrer"
           className="text-blue-600 underline"
         >
-          <b>
-            Sudden Cardiac Arrest Awareness: Save Lives with CPR & AED
-          </b>
+          <b>Sudden Cardiac Arrest Awareness: Save Lives with CPR & AED</b>
         </a>
       </p>
     </div>

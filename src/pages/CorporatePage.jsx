@@ -10,6 +10,7 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 import Hero from "../components/corporatePage/Hero";
 import HowProgramWork from "../components/corporatePage/HowProgramWork";
+import { ContactForm } from "../components/corporatePage/ContactForm";
 
 const faqData = [
   {
@@ -70,9 +71,10 @@ const CorporatePage = () => {
         <Features4 />
         <HowProgramWork/>
         {/* <Features6 /> */}
-        <Features5 />
+        {/* <Features5 /> */}
         <Features7 />
         <Feature8 faqData={faqData}/>
+        <ContactForm/>
       </main>
 
       {/* Footer */}
