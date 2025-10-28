@@ -4,6 +4,7 @@ import SecondMedicalOpinion from "./BlogsContent/SecondMedicalOpinion";
 import HeartDisease from "./BlogsContent/HeartDisease";
 import ChildCancerWarningSigns from "./BlogsContent/ChildCancerWarningSigns";
 import SuddenCardiacArrestAwareness from "./BlogsContent/SuddenCardiacArrestAwareness.jsx";
+import WorldStrokeDay2025 from "./BlogsContent/WorldStrokeDay.jsx";
 
 export const blogDomainName = window.location.origin;
 
@@ -15,8 +16,8 @@ export const blogData = [
     date: "2025-08-24",
     authorImage: `${blogDomainName}/src/assets/images/image.svg`,
     authorName: "Team Ewa Health",
-     isLocal: true,
-     altText:"Joint Health Simple Exercises",
+    isLocal: true,
+    altText: "Joint Health Simple Exercises",
     content: <HealthyJoints />,
   },
   {
@@ -26,20 +27,21 @@ export const blogData = [
     date: "2025-08-24",
     authorImage: `${blogDomainName}/src/assets/images/image.svg`,
     authorName: "Team Ewa Health",
-     isLocal: true,
-     altText:" Second Surgical Opinion",
-    content: < SecondMedicalOpinion/>,
+    isLocal: true,
+    altText: " Second Surgical Opinion",
+    content: <SecondMedicalOpinion />,
   },
   {
     slug: "second-opinions-for-cancer-heart-disease", // unique slug for routing
     imageSrc: `${blogDomainName}/images/BlogsContent/blog3.png`,
-    title: "Why Second Opinions Are Crucial for Serious Diagnoses like Cancer & Heart Disease",
+    title:
+      "Why Second Opinions Are Crucial for Serious Diagnoses like Cancer & Heart Disease",
     date: "2025-08-24",
     authorImage: `${blogDomainName}/src/assets/images/image.svg`,
     authorName: "Team Ewa Health",
-     isLocal: true,
-     altText:"Online Second Opinion Consultation for Serious Diagnoses",
-    content: < HeartDisease/>,
+    isLocal: true,
+    altText: "Online Second Opinion Consultation for Serious Diagnoses",
+    content: <HeartDisease />,
   },
   {
     slug: "child-cancer-early-warning-signs-for-immediate-action", // unique slug for routing
@@ -48,21 +50,20 @@ export const blogData = [
     date: "2025-09-23",
     authorImage: `${blogDomainName}/src/assets/images/image.svg`,
     authorName: "Team Ewa Health",
-     isLocal: true,
-     altText:"Child cancer early warning signs",
-    content: < ChildCancerWarningSigns/>,
+    isLocal: true,
+    altText: "Child cancer early warning signs",
+    content: <ChildCancerWarningSigns />,
   },
   {
-  slug: "sudden-cardiac-arrest-awareness-save-lives-with-cpr-and-aed", // unique slug for routing
-  imageSrc: `${blogDomainName}/images/BlogsContent/blog5.png`,
-  title: "Sudden Cardiac Arrest Awareness: Save Lives with CPR & AED",
-  date: "2025-10-10",
-  authorImage: `${blogDomainName}/src/assets/images/image.svg`,
-  authorName: "Team Ewa Health",
-  isLocal: true,
-  altText: "Sudden cardiac arrest awareness CPR AED",
-  content: <SuddenCardiacArrestAwareness />,
-},
-
-
+    slug: "world-stroke-day-2025-understanding-causes-and-symptoms", 
+    imageSrc: `${blogDomainName}/images/BlogsContent/blog5.png`,
+    title: "World Stroke Day 2025: Understanding Causes and Symptoms",
+    date: "2025-10-27",
+    authorImage: `${blogDomainName}/src/assets/images/image.svg`,
+    authorName: "Team Ewa Health",
+    isLocal: true,
+    altText:
+      "World Stroke Day 2025 awareness about causes and symptoms of stroke",
+    content: <WorldStrokeDay2025 />,
+  },
 ];

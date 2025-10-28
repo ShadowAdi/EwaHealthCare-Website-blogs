@@ -1,36 +1,85 @@
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
 import React from "react";
-import { Link } from 'react-router-dom';
-import { domainName } from '../App';
-import HeroHeader from './HeroHeader';
+import { Link } from "react-router-dom";
+import { domainName } from "../App";
+import HeroHeader from "./HeroHeader";
 
 const HeroSection = () => {
   const notifications = {
     desktop: [
-      { icon: '/images/heroSection/notification/notif-report.svg', top: '55%', left: '0%', delay: 0, id: 1 },
-      { icon: '/images/heroSection/notification/notif-mail.svg', top: '60%', left: '0%', delay: 2, id: 2 },
-      { icon: '/images/heroSection/notification/notif-policy.svg', top: '70%', left: '0%', delay: 3, id: 3 },
+      {
+        icon: "/images/heroSection/notification/notif-report.svg",
+        top: "55%",
+        left: "0%",
+        delay: 0,
+        id: 1,
+      },
+      {
+        icon: "/images/heroSection/notification/notif-mail.svg",
+        top: "60%",
+        left: "0%",
+        delay: 2,
+        id: 2,
+      },
+      {
+        icon: "/images/heroSection/notification/notif-policy.svg",
+        top: "70%",
+        left: "0%",
+        delay: 3,
+        id: 3,
+      },
     ],
     tablet: [
-      { icon: '/images/heroSection/notification/notif-hospital.svg', bottom: '40%', delay: 0.5 },
-      { icon: '/images/heroSection/notification/notif-sleep.svg', bottom: '20%', delay: 1 },
+      {
+        icon: "/images/heroSection/notification/notif-hospital.svg",
+        bottom: "40%",
+        delay: 0.5,
+      },
+      {
+        icon: "/images/heroSection/notification/notif-sleep.svg",
+        bottom: "20%",
+        delay: 1,
+      },
     ],
     mobile: [
-      { icon: '/images/heroSection/notification/notif-hospital.svg', bottom: '40%', delay: 0.5 },
-      { icon: '/images/heroSection/notification/notif-sleep.svg', bottom: '20%', delay: 1 },
+      {
+        icon: "/images/heroSection/notification/notif-hospital.svg",
+        bottom: "40%",
+        delay: 0.5,
+      },
+      {
+        icon: "/images/heroSection/notification/notif-sleep.svg",
+        bottom: "20%",
+        delay: 1,
+      },
     ],
   };
 
   const getNotificationText = (icon) => {
-    const fileName = icon.split('/').pop();
+    const fileName = icon.split("/").pop();
     const texts = {
-      'notif-report.svg': { text1: 'Annual health checkup', text2: 'Report ready to view' },
-      'notif-mail.svg': { text1: 'Doctor Consultation Booked', text2: 'MyewaCare Partner Hospital, 2kms away' },
-      'notif-policy.svg': { text1: 'Ewa Wellness Goal Achieved', text2: 'Your wellness coach Priya has a message for you.' },
-      'notif-hospital.svg': { text1: 'Naturopathy Scheduled', text2: 'our session with Dr. Ramesh is confirmed.' },
-      'notif-sleep.svg': { text1: 'Diagnostic Test Report Ready', text2: 'View your health report now.' },
+      "notif-report.svg": {
+        text1: "Annual health checkup",
+        text2: "Report ready to view",
+      },
+      "notif-mail.svg": {
+        text1: "Doctor Consultation Booked",
+        text2: "MyewaCare Partner Hospital, 2kms away",
+      },
+      "notif-policy.svg": {
+        text1: "Ewa Wellness Goal Achieved",
+        text2: "Your wellness coach Priya has a message for you.",
+      },
+      "notif-hospital.svg": {
+        text1: "Naturopathy Scheduled",
+        text2: "our session with Dr. Ramesh is confirmed.",
+      },
+      "notif-sleep.svg": {
+        text1: "Diagnostic Test Report Ready",
+        text2: "View your health report now.",
+      },
     };
-    return texts[fileName] || { text1: '', text2: '' };
+    return texts[fileName] || { text1: "", text2: "" };
   };
 
   const Notification = ({ icon, text1, text2, ...position }) => (
@@ -40,26 +89,44 @@ const HeroSection = () => {
       style={position}
     >
       <div className="rounded-full border border-primary/30 w-6 h-6 md:w-10 md:h-10 flex justify-center items-center bg-background/25">
-        <img alt="Notification icon" loading="lazy" src={icon} className='invert' />
+        <img
+          alt="Notification icon"
+          loading="lazy"
+          src={icon}
+          className="invert"
+        />
       </div>
       <div className="flex flex-col">
-        <p className="font-medium text-xs md:text-base whitespace-nowrap">{text1}</p>
-        <p className="opacity-70 text-xs md:text-base whitespace-nowrap">{text2}</p>
+        <p className="font-medium text-xs md:text-base whitespace-nowrap">
+          {text1}
+        </p>
+        <p className="opacity-70 text-xs md:text-base whitespace-nowrap">
+          {text2}
+        </p>
       </div>
     </div>
   );
 
   const features = [
-    { icon: '/images/heroSection/features/Star.svg', label: 'Second Opinion' },
-    { icon: '/images/heroSection/features/Heart.svg', label: 'Health & Wellness' },
-    { icon: '/images/heroSection/features/Star.svg', label: 'Surgeries' },
-    { icon: '/images/heroSection/features/Heart.svg', label: 'Consultation ' },
-    { icon: '/images/heroSection/features/Star.svg', label: 'MyEwacare' },
-    { icon: '/images/heroSection/features/Heart.svg', label: '24\\7 available' },
-    { icon: '/images/heroSection/features/Star.svg', label: 'Best Doctors' },
-    { icon: '/images/heroSection/features/Heart.svg', label: 'Holistic Care' },
-    { icon: '/images/heroSection/features/Star.svg', label: 'Diagnostic' },
-    { icon: '/images/heroSection/features/Heart.svg', label: 'Reliable Treatment' },
+    { icon: "/images/heroSection/features/Star.svg", label: "Second Opinion" },
+    {
+      icon: "/images/heroSection/features/Heart.svg",
+      label: "Health & Wellness",
+    },
+    { icon: "/images/heroSection/features/Star.svg", label: "Surgeries" },
+    { icon: "/images/heroSection/features/Heart.svg", label: "Consultation " },
+    { icon: "/images/heroSection/features/Star.svg", label: "MyEwacare" },
+    {
+      icon: "/images/heroSection/features/Heart.svg",
+      label: "24\\7 available",
+    },
+    { icon: "/images/heroSection/features/Star.svg", label: "Best Doctors" },
+    { icon: "/images/heroSection/features/Heart.svg", label: "Holistic Care" },
+    { icon: "/images/heroSection/features/Star.svg", label: "Diagnostic" },
+    {
+      icon: "/images/heroSection/features/Heart.svg",
+      label: "Reliable Treatment",
+    },
   ];
 
   const notificationVariants = {
@@ -71,13 +138,15 @@ const HeroSection = () => {
   return (
     <>
       <HeroHeader />
-      <div
-        className="relative w-full  flex flex-col md:flex-row justify-center md:gap-10 lg:gap-0 lg:h-[600px] md:h-[500px]"
-      >
+      <div className="relative w-full  flex flex-col md:flex-row justify-center md:gap-10 lg:gap-0 lg:h-[600px] md:h-[500px]">
         {/* Background Gradients */}
         <div className="absolute -bottom-[36%] w-full h-full -z-10">
-          <img alt="bg" loading="lazy" className="absolute h-full w-full"
-            src={`${domainName}/images/heroSection/gradient-bg-lg-2.svg`} />
+          <img
+            alt="bg"
+            loading="lazy"
+            className="absolute h-full w-full"
+            src={`${domainName}/images/heroSection/gradient-bg-lg-2.svg`}
+          />
         </div>
 
         {/* Content Container */}
@@ -90,33 +159,46 @@ const HeroSection = () => {
              lg:mt-[4rem] md:pl-20"
         >
           <div className="flex flex-col">
-            <h1 className="text-lg !leading-[2rem] sm:leading-[1.8rem] 
+            <h1
+              className="text-lg !leading-[2rem] sm:leading-[1.8rem] 
                           text-center font-semibold sm:text-2xl 
-                          md:text-left   2xl:text-[2.3rem] xl:text-[1.75rem] lg:text-[1.46rem]  md:text-[1.3rem]  ">
+                          md:text-left   2xl:text-[2.3rem] xl:text-[1.75rem] lg:text-[1.46rem]  md:text-[1.3rem]  "
+            >
               <span className="hidden lg:block">
-                Trusted Medical Second Opinion Service with<br />
-                Expert Second Opinion Doctors for Accurate<br />
-                and Effective Treatment Plans
+                Trusted Surgical Second Opinions, HealthCare <br /> Solutions
+                for Individuals & Organizations
               </span>
               <span className="block lg:hidden">
-                Get reliable second opinion medical services and<br />personalized health programs designed to guide your diagnosis. <br />Our expert team offers trusted cancer second opinion consultations<br /> and clear advice from experienced second opinion doctors.<br /> Make confident decisions about surgery, treatment and <br /> care options to live a healthier, balanced life. </span>
+                MyEwaCare connects you with expert surgical second opinion
+                doctors, diagnostic testing, virtual doctor consultations,
+                personalized wellness programs, and corporate wellness
+                solutions. <br />
+                Accessible anytime, anywhere across India, we help you make
+                confident, informed decisions about surgery, treatment, and
+                overall health.
+              </span>
             </h1>
             <p className="hidden lg:mt-[20px] sm:mt-0  text-foreground-light text-l text-[#79717f] lg:block    lg:text-[0.95rem]  ">
-              Get reliable second opinion medical services and personalized health programs <br />
-              designed to guide your diagnosis. Our expert team offers trusted cancer second <br />
-              opinion consultations and clear advice from experienced second opinion doctors. <br />
-              Make confident decisions about surgery, treatment and care options to live a <br />
+              Get reliable second opinion medical services and personalized
+              health programs <br />
+              designed to guide your diagnosis. Our expert team offers trusted
+              cancer second <br />
+              opinion consultations and clear advice from experienced second
+              opinion doctors. <br />
+              Make confident decisions about surgery, treatment and care options
+              to live a <br />
               healthier, balanced life.
-
             </p>
           </div>
 
           <button
             onClick={() => {
-              const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+              const userAgent =
+                navigator.userAgent || navigator.vendor || window.opera;
 
               const isAndroid = /android/i.test(userAgent);
-              const isIOS = /iPad|iPhone|iPod/.test(userAgent) && !window.MSStream;
+              const isIOS =
+                /iPad|iPhone|iPod/.test(userAgent) && !window.MSStream;
 
               if (isAndroid) {
                 // Android device
@@ -152,7 +234,6 @@ const HeroSection = () => {
           </button>
         </div>
 
-
         {/* Image Section */}
         <div className="flex-[0_0_40%] max-w-[350px] flex justify-center relative xl:h-[500px] 2xl:h-[500px]  xl:mt-20 md:top-[30px]  md:right-[80px]">
           <div className="w-full h-full md:absolute">
@@ -165,7 +246,6 @@ const HeroSection = () => {
                   className="absolute right-[-100px] bottom-20 w-[640px] hidden md:block"
                   src={`${domainName}/images/heroSection/hero_sec_vector-overlay.png`}
                 />
-
 
                 {/* Image for Mobile */}
                 <img
@@ -203,12 +283,19 @@ const HeroSection = () => {
                           }}
                           style={{
                             top: notif.top,
-                            left: notif.left ? `calc(${notif.left} - 150px)` : "-50px",
+                            left: notif.left
+                              ? `calc(${notif.left} - 150px)`
+                              : "-50px",
                             right: notif.right,
                             bottom: notif.bottom,
                           }}
                         >
-                          <Notification icon={notif.icon} text1={text1} text2={text2} {...notif} />
+                          <Notification
+                            icon={notif.icon}
+                            text1={text1}
+                            text2={text2}
+                            {...notif}
+                          />
                         </motion.div>
                       );
                     })}
@@ -237,7 +324,11 @@ const HeroSection = () => {
                           }}
                           style={{ bottom: notif.bottom }}
                         >
-                          <Notification icon={notif.icon} text1={text1} text2={text2} />
+                          <Notification
+                            icon={notif.icon}
+                            text1={text1}
+                            text2={text2}
+                          />
                         </motion.div>
                       );
                     })}
@@ -267,15 +358,15 @@ const HeroSection = () => {
                           }}
                           style={{ bottom: notif.bottom }}
                         >
-                          <Notification icon={notif.icon} text1={text1} text2={text2} />
+                          <Notification
+                            icon={notif.icon}
+                            text1={text1}
+                            text2={text2}
+                          />
                         </motion.div>
                       );
                     })}
                   </div>
-
-
-
-
                 </div>
               </div>
             </div>
@@ -288,9 +379,19 @@ const HeroSection = () => {
             <div className="absolute inset-0 bg-[#9bd3d6]/50  z-10"></div>
             <div className="h-8 md:h-12 flex gap-4 md:gap-14 items-center anim-scroll relative z-10">
               {[...features, ...features].map((feature, index) => (
-                <div key={index} className="flex items-center gap-4 md:gap-14 shrink-0">
-                  <img alt="feature" loading='lazy' className="w-4 h-4 md:w-8 md:h-8" src={feature.icon} />
-                  <p className="text-white md:text-xl md:font-semibold">{feature.label}</p>
+                <div
+                  key={index}
+                  className="flex items-center gap-4 md:gap-14 shrink-0"
+                >
+                  <img
+                    alt="feature"
+                    loading="lazy"
+                    className="w-4 h-4 md:w-8 md:h-8"
+                    src={feature.icon}
+                  />
+                  <p className="text-white md:text-xl md:font-semibold">
+                    {feature.label}
+                  </p>
                 </div>
               ))}
             </div>
@@ -302,6 +403,3 @@ const HeroSection = () => {
 };
 
 export default HeroSection;
-
-
-

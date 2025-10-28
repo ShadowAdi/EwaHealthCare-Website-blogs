@@ -4,43 +4,51 @@ import { motion, AnimatePresence } from "framer-motion";
 const testimonials = [
   {
     id: 1,
-    name: "Dr. Emily Carter",
-    photo: "https://images.pexels.com/photos/8541994/pexels-photo-8541995.jpeg",
+    name: "Francis & Family",
     quote:
-      "The second opinion process was seamless and gave me peace of mind about my treatment plan. Highly recommend for anyone seeking clarity.",
-    date: "October 5, 2025",
+      "Thanks to the second opinion from My Ewa Health Care, we got the right guidance at the right time. We were admitted to Vikram Aura Hospital and received prompt surgery. Within just four days, everything went smoothly and successfully. We are truly grateful for the care and support provided by the team.",
   },
   {
     id: 2,
-    name: "Michael Rodriguez",
-    photo: "https://images.pexels.com/photos/8541994/pexels-photo-8541994.jpeg",
+    name: "Anita K.",
     quote:
-      "Thanks to the specialist review, I avoided unnecessary surgery. The virtual consultation was incredibly helpful and convenient.",
-    date: "September 28, 2025",
+      "I uploaded my reports to My Ewa Health Care for a free review, and the doctor explained everything clearly during the second opinion. It helped me avoid unnecessary tests and choose the right treatment. The whole process was quick, easy, and reassuring.",
   },
   {
     id: 3,
-    name: "Sarah Lee",
-    photo: "https://images.pexels.com/photos/8541994/pexels-photo-8541996.jpeg",
+    name: "Nidhi V.",
     quote:
-      "Ongoing support made all the difference in my recovery journey. The detailed report arrived exactly as promised within 48 hours.",
-    date: "September 15, 2025",
+      "I was really stressed when I heard I might need surgery. Before deciding anything, I reached out to My Ewa Health Care for a second opinion. The doctor listened to everything I was worried about and explained my scan results in a way I could understand. He even suggested a less invasive approach that worked great for me. It felt good to finally be heard.",
   },
   {
     id: 4,
-    name: "David Kim",
-    photo: "https://images.pexels.com/photos/8541994/pexels-photo-8541997.jpeg",
+    name: "Ajay P.",
     quote:
-      "Expert insights on my rare genetic disorder changed my approach to care. The team was professional and empathetic throughout.",
-    date: "August 20, 2025",
+      "My family was nervous after my dad’s diagnosis and unsure about the treatment plan. The second opinion from My Ewa Health Care was detailed and reassuring. They took their time to explain all the little things so we could make the right decision together. It gave us much-needed peace of mind.",
   },
   {
     id: 5,
-    name: "Lisa Patel",
-    photo: "https://images.pexels.com/photos/8541994/pexels-photo-8541998.jpeg",
+    name: "Meera D.",
     quote:
-      "From submission to consultation, everything was straightforward. This service truly empowers patients with informed decisions.",
-    date: "July 12, 2025",
+      "I hadn’t really thought about getting a second opinion before, but I’m so glad I did. The process was simple, and I got answers that my first doctor didn’t provide. It completely changed how I felt about my health — I finally felt in control.",
+  },
+  {
+    id: 6,
+    name: "Vikas G.",
+    quote:
+      "I live far from the city, so I liked how quickly they connected me to a specialist. The response was fast, and I got through all my questions patiently. Having that extra expert opinion really made me feel confident about what to do next.",
+  },
+  {
+    id: 7,
+    name: "Ravi S.",
+    quote:
+      "I had many doubts about my test reports, and it’s not easy to understand everything on your own. I used My Ewa Care’s free report review service, and the doctor explained everything clearly. It gave me confidence and helped me see the right next steps for my health.",
+  },
+  {
+    id: 8,
+    name: "Pooja M.",
+    quote:
+      "Getting a second opinion for my scans was a big relief. They reviewed everything for free, which was so helpful. The doctor took time to explain my reports in a simple way, so I felt totally at ease about my treatment plan.",
   },
 ];
 
@@ -55,7 +63,6 @@ const Sixth = () => {
       (prev) => (prev - 1 + testimonials.length) % testimonials.length
     );
 
-  // removed TypeScript annotation here
   const handleDotClick = (index) => setCurrentIndex(index);
 
   return (
@@ -72,7 +79,6 @@ const Sixth = () => {
           </h2>
 
           <div className="relative w-full max-w-3xl mx-auto">
-            {/* Optional decorative ring image */}
             <img
               src="/images/corporatePage/TestimonialRing.png"
               alt="Ring decoration"
@@ -89,15 +95,6 @@ const Sixth = () => {
                 className="bg-[#02989D] rounded-2xl p-8 sm:p-12 shadow-lg relative z-10"
               >
                 <div className="flex flex-col sm:flex-row items-center gap-6">
-                  {/* Avatar */}
-                  <div className="flex-shrink-0">
-                    <img
-                      src={testimonials[currentIndex].photo}
-                      alt={testimonials[currentIndex].name}
-                      className="w-24 h-24 sm:w-40 sm:h-40 rounded-full object-cover"
-                    />
-                  </div>
-
                   {/* Text Content */}
                   <div className="flex-1 space-y-10 text-center sm:text-left">
                     <div className="flex flex-col items-start space-y-2">
@@ -108,9 +105,6 @@ const Sixth = () => {
                         “{testimonials[currentIndex].quote}”
                       </p>
                     </div>
-                    <p className="text-white/70 text-xs">
-                      {testimonials[currentIndex].date}
-                    </p>
                   </div>
                 </div>
               </motion.div>

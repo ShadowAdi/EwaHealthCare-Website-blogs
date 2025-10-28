@@ -45,12 +45,10 @@ const Coverage = () => {
           <div className="h-full flex flex-col justify-between rounded-2xl overflow-hidden">
             <section className="p-6 md:p-10">
               <h2 className="text-lg md:text-2xl mb-2 font-semibold text-[#1e1028]">
-                Best Second Opinion Services — Online & In-Person
+                Advanced Diagnostics & Lab Testing
               </h2>
               <p className="text-md md:text-xl opacity-80 text-[#1e1028]">
-                Eliminate confusion and doubts about your health with our trusted second opinion services.
-                Whether online or face-to-face, we provide comprehensive medical reviews and professional
-                guidance to ensure you get the clarity and care you deserve.
+                Access a wide range of diagnostic tests and health screenings from certified labs. Our platform ensures timely results and professional guidance, helping you make informed decisions about your health.
               </p>
             </section>
             <section className="bg-[#02989D]/25 rounded-tl-2xl rounded-tr-2xl shadow-md mx-4 md:mx-6 pb-2">
@@ -73,12 +71,10 @@ const Coverage = () => {
           <div className="h-full flex flex-col justify-between rounded-2xl overflow-hidden">
             <section className="p-6 md:p-10">
               <h2 className="text-lg md:text-2xl mb-2 font-semibold text-[#422d1a]">
-                Proactive Health Management & Personalized Recommendations
+                Tailored Wellness & Preventive Care
               </h2>
               <p className="text-md md:text-xl opacity-80 text-[#422d1a]">
-                Stay ahead of health risks with proactive second opinions, advanced diagnostics,
-                and personalized healthcare recommendations. Our tailored approach includes nutrition advice,
-                fitness guidance, and wellness strategies for long-term health and well-being.
+                Achieve long-term well-being with customized nutrition plans, fitness guidance, stress management, and lifestyle coaching. Our programs are designed for individuals and corporate teams to maintain proactive health.
               </p>
             </section>
             <section className="bg-[#02989D]/25 rounded-tl-2xl rounded-tr-2xl shadow-md mx-4 md:mx-6 pb-2">
@@ -101,12 +97,10 @@ const Coverage = () => {
           <div className="h-full flex flex-col justify-between rounded-2xl overflow-hidden">
             <section className="p-6 md:p-10">
               <h2 className="text-lg md:text-2xl mb-2 font-semibold text-[#1e1028]">
-                Compassionate Second Opinion Support — Every Step of the Way
+                Online Consultations & Corporate Wellness
               </h2>
               <p className="text-md md:text-xl opacity-80 text-[#1e1028]">
-                We offer continuous support throughout your healthcare journey. Our dedicated team ensures
-                compassionate care, clear communication, and expert medical second opinions to guide you toward
-                the best possible health outcomes.
+               Connect with doctors anytime via secure virtual consultations and bring holistic healthcare to your organization with our corporate wellness solutions. We support both individual and enterprise health needs across India.
               </p>
             </section>
             <section className="bg-[#02989D]/25 rounded-tl-2xl rounded-tr-2xl shadow-md mx-4 md:mx-6 pb-2">

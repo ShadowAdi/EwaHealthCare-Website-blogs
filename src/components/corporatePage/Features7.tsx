@@ -4,47 +4,75 @@ import { motion, AnimatePresence } from "framer-motion";
 const testimonials = [
   {
     id: 1,
-    name: "Sarah Johnson",
-    role: "HR Leader",
-    company: "Financial Services Firm",
+    name: "HR Lead",
+    role: "Valtech",
     image:
       "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=600&auto=format&fit=crop&q=60",
     testimonial:
-      "Personalized fitness and nutrition coaching made our workforce healthier and more focused.",
-    date: "May 8, 2025",
+      "We really appreciate the effort your team put into organizing our health check camp at the Bengaluru office. Everything went smoothly, and the whole process was seamless. Looking forward to bringing these wellness activities to all our other locations.",
   },
   {
     id: 2,
-    name: "Michael Chen",
-    role: "Wellness Director",
-    company: "Tech Solutions Inc",
+    name: "Amit S.",
+    role: "",
     image:
-      "https://images.unsplash.com/photo-1595152772835-219674b2a8a6?w=600&auto=format&fit=crop&q=60",
+      "https://images.unsplash.com/photo-1603415526960-f7e0328c63b1?w=600&auto=format&fit=crop&q=60",
     testimonial:
-      "The stress management program transformed our company culture. Employee satisfaction increased by 40%.",
-    date: "April 15, 2025",
+      "I never took time for health checkups before, but when the wellness camp happened at our office, it was so easy to get screened. I found out about a risk early and started making changes. It’s great to see my company care about things beyond work.",
   },
   {
     id: 3,
-    name: "Emily Rodriguez",
-    role: "Operations Manager",
-    company: "Healthcare Partners",
+    name: "Neha G. (Employee’s spouse)",
+    role: "",
     image:
-      "https://images.unsplash.com/photo-1595152772835-219674b2a8a6?w=600&auto=format&fit=crop&q=60",
+      "https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=600&auto=format&fit=crop&q=60",
     testimonial:
-      "Our team's productivity soared after implementing the nutrition and wellness programs. Highly recommended!",
-    date: "March 22, 2025",
+      "My husband joined the fitness and nutrition sessions through his company’s wellness plan. We started cooking healthier meals together, and I noticed how much more energy he has now. These programs really helped our whole family live better.",
   },
   {
     id: 4,
-    name: "David Park",
-    role: "CEO",
-    company: "Innovation Labs",
+    name: "Vinod K.",
+    role: "",
     image:
-      "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=600&auto=format&fit=crop&q=60",
+      "https://images.unsplash.com/photo-1607746882042-944635dfe10e?w=600&auto=format&fit=crop&q=60",
     testimonial:
-      "Best investment we've made in our people. The holistic approach to wellness has reduced sick days significantly.",
-    date: "February 10, 2025",
+      "I used to feel stressed at work a lot, but after attending the mindfulness workshops, I learned some simple ideas to manage it. Even just a few minutes of breathing practice makes a difference. My mood at home and at work has really improved.",
+  },
+  {
+    id: 5,
+    name: "Priya M.",
+    role: "",
+    image:
+      "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=600&auto=format&fit=crop&q=60",
+    testimonial:
+      "I’m so glad our company runs these wellness camps because it’s hard to fit health into a busy schedule. The on-site screenings make it so convenient, and the advice from the experts actually makes sense for regular people like me.",
+  },
+  {
+    id: 6,
+    name: "Lavanya P.",
+    role: "",
+    image:
+      "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=600&auto=format&fit=crop&q=60",
+    testimonial:
+      "After attending the group fitness challenge, I felt more energized and motivated than ever. It pushed me out of my comfort zone, and now a few coworkers and I go for a walk together daily. It’s become a highlight of my day.",
+  },
+  {
+    id: 7,
+    name: "Ritu B.",
+    role: "",
+    image:
+      "https://images.unsplash.com/photo-1603415526960-f7e0328c63b1?w=600&auto=format&fit=crop&q=60",
+    testimonial:
+      "I was nervous about mental health support, but the seminars and peer group sessions made it easy to open up. I learned a few simple tricks to handle stress and actually started sleeping better. I feel like a better version of myself both at work and at home.",
+  },
+  {
+    id: 8,
+    name: "Deepak J. (Employee’s spouse)",
+    role: "",
+    image:
+      "https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=600&auto=format&fit=crop&q=60",
+    testimonial:
+      "My wife used to skip regular checkups because of her busy job. The wellness program brought a camp right to her office—no excuses or delays. She caught a vitamin deficiency early and we got diet tips together. The whole family benefits.",
   },
 ];
 
@@ -59,7 +87,15 @@ const Features7 = () => {
       (prev) => (prev - 1 + testimonials.length) % testimonials.length
     );
 
-  const handleDotClick = (index) => setCurrentIndex(index);
+  interface Testimonial {
+    id: number;
+    name: string;
+    role: string;
+    image: string;
+    testimonial: string;
+  }
+
+  const handleDotClick = (index: number): void => setCurrentIndex(index);
 
   return (
     <section className="w-full max-w-[1440px] mx-auto px-4 sm:px-10 items-center justify-center bg-white h-full flex py-8 lg:py-10">
@@ -71,11 +107,10 @@ const Features7 = () => {
           className="flex flex-col items-center w-full justify-center space-y-10 z-30"
         >
           <h2 className="text-[#02989D] text-2xl sm:text-3xl font-semibold text-center">
-            What Our Patients Say
+            Corporate Wellness Stories
           </h2>
 
           <div className="relative w-full max-w-3xl mx-auto">
-            {/* Background image (optional decorative ring) */}
             <img
               src="/images/corporatePage/TestimonialRing.png"
               alt="Ring decoration"
@@ -92,7 +127,6 @@ const Features7 = () => {
                 className="bg-[#02989D] rounded-2xl p-8 sm:p-12 shadow-lg relative z-10"
               >
                 <div className="flex flex-col sm:flex-row items-center gap-6">
-                  {/* Avatar */}
                   <div className="flex-shrink-0">
                     <img
                       src={testimonials[currentIndex].image}
@@ -101,26 +135,22 @@ const Features7 = () => {
                     />
                   </div>
 
-                  {/* Text content */}
                   <div className="flex-1 space-y-10 text-center sm:text-left">
                     <div className="flex flex-col items-start space-y-2">
                       <h3 className="text-white text-xl font-semibold">
-                        {testimonials[currentIndex].role},{" "}
-                        {testimonials[currentIndex].company}
+                        {testimonials[currentIndex].name}
+                        {testimonials[currentIndex].role &&
+                          `, ${testimonials[currentIndex].role}`}
                       </h3>
                       <p className="text-white/90 text-base leading-relaxed">
                         {testimonials[currentIndex].testimonial}
                       </p>
                     </div>
-                    <p className="text-white/70 text-xs">
-                      {testimonials[currentIndex].date}
-                    </p>
                   </div>
                 </div>
               </motion.div>
             </AnimatePresence>
 
-            {/* Navigation */}
             <div className="flex items-center justify-between mt-8 max-w-sm mx-auto">
               <button
                 onClick={handlePrev}
