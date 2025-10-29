@@ -11,6 +11,7 @@ import Header from "../components/Header";
 import Hero from "../components/corporatePage/Hero";
 import HowProgramWork from "../components/corporatePage/HowProgramWork";
 import { ContactForm } from "../components/corporatePage/ContactForm";
+import CorporateWellnessPackage from "../components/corporatePage/CorporateWellnessPackage";
 
 const faqData = [
   {
@@ -70,6 +71,7 @@ const CorporatePage = () => {
         <Feature3 />
         <Features4 />
         <HowProgramWork/>
+        <CorporateWellnessPackage/>
         {/* <Features6 /> */}
         {/* <Features5 /> */}
         <Features7 />
