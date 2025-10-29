@@ -102,7 +102,6 @@ const Feature3 = () => {
               feature3Title={feature.feature3Title}
               key={i}
               index={i}
-              firstOne={feature.firstOne}
             />
           ))}
         </div>

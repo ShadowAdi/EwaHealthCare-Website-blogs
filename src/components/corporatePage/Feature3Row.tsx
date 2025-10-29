@@ -1,12 +1,19 @@
 import React from "react";
 import { motion } from "framer-motion";
 
+type  Feature3Type= {
+   feature3Path:string,
+  feature3Title:string,
+  feature3Text:string,
+  index:number,
+}
+
 const Feature3Row = ({
   feature3Path,
   feature3Title,
   feature3Text,
   index = 0,
-}) => {
+}:Feature3Type) => {
   return (
     <motion.div
       initial={{ opacity: 0, x: 50 }}
@@ -20,8 +27,7 @@ const Feature3Row = ({
       <img
         alt="Feature3"
         src={feature3Path}
-        className="h-[30px] w-[30px] sm:h-[40px] sm:w-[40px] object-contain flex-shrink-0 transition-all duration-300 group-hover:invert group-hover:brightness-0"
-        style={{ filter: "none" }} // ensures icon is black initially
+        className="h-[30px] w-[30px] sm:h-[40px] sm:w-[40px] object-contain flex-shrink-0 transition-all duration-300 group-hover:brightness-0 group-hover:invert"
       />
 
       {/* Text */}
