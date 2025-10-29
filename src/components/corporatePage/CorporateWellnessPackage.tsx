@@ -74,7 +74,7 @@ const CorporateWellnessPackage = () => {
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.2 }}
-        className="w-full max-w-6xl gap-5 flex items-center flex-wrap  justify-center  "
+        className="w-full max-w-6xl gap-5 flex items-center flex-col sm:flex-row flex-wrap  justify-center  "
       >
         {packages.map((pkg, index) => (
           <div
