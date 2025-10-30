@@ -90,7 +90,7 @@ const ContactForm = () => {
                     className="bg-white  py-1 px-3 rounded-full cursor-pointer hover:bg-gray-100 transition-colors text-sm sm:text-base flex space-x-3 "
                   >
                     <img
-                      src="../../../public/images/secondOpinion/UploadMedIcon.svg"
+                      src="/images/secondOpinion/UploadMedIcon.svg"
                       alt="image-upload-icon"
                       className="mr-2"
                     />
