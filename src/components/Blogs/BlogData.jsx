@@ -67,7 +67,7 @@ export const blogData = [
   },
   {
     slug: "world-stroke-day-2025-causes-symptoms-prevention",
-    imageSrc: `${blogDomainName}/images/BlogsContent/blog6New.png`,
+    imageSrc: `${blogDomainName}/images/BlogsContent/blog6Cover.jpg`,
     title: "World Stroke Day 2025: Understanding Causes and Symptoms",
     date: "2025-10-27",
     authorImage: `${blogDomainName}/src/assets/images/image.svg`,

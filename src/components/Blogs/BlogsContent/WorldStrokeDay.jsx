@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import Blog6New from "../../../../public/images/BlogsContent/blog-6-1-new.jpg";
-import secondImage from "../../../../public/images/BlogsContent/blog6-2.jpg";
+import secondImage from "../../../../public/images/BlogsContent/blog-6-2.jpg";
 
 const WorldStrokeDay2025 = () => {
   useEffect(() => {
@@ -33,9 +33,6 @@ const WorldStrokeDay2025 = () => {
   return (
     <div className="w-full px-0 py-10 text-[#404040] text-left">
       {/* H1 */}
-      <h1 className="text-3xl font-semibold mb-6">
-        World Stroke Day 2025: Understanding Causes and Symptoms
-      </h1>
       <p className="mb-4">
         Every year, <strong>World Stroke Day</strong> (observed on October 29)
         reminds us of the urgent need to raise awareness about one of the
@@ -70,11 +67,11 @@ const WorldStrokeDay2025 = () => {
         </li>
       </ul>
 
-        <div className="my-8">
+        <div className="my-8 mx-auto">
         <img
           src={Blog6New}
-          alt="World Stroke Day 2025 illustration"
-          className="w-4/5 max-w-2xl rounded-lg shadow-md"
+          alt="FAST stroke symptoms"
+          className="w-4/5 max-w-2xl rounded-lg shadow-md mx-auto"
         />
       </div>
       <p className="mb-4">
@@ -151,11 +148,11 @@ const WorldStrokeDay2025 = () => {
         </li>
       </ul>
 
-      <div className="my-8">
+      <div className="my-8 mx-auto">
         <img
           src={secondImage}
-          alt="World Stroke Day 2025 illustration"
-          className="w-4/5 max-w-2xl rounded-lg shadow-md"
+          alt="Types Of Brain Stroke"
+          className="w-4/5 max-w-2xl rounded-lg shadow-md mx-auto"
         />
       </div>
 
@@ -184,7 +181,7 @@ const WorldStrokeDay2025 = () => {
         Early diagnosis also helps identify underlying conditions — like
         hypertension or diabetes — that could lead to another stroke. <br />
         That’s why regular health screenings and{" "}
-        <a className="text-blue-700 underline font-semibold" href="https://myewacare.com/second-opinion">
+        <a target="_blank" className="text-blue-700 underline font-semibold" href="https://myewacare.com/second-opinion">
           second medical opinions
         </a>{" "}
         play a vital role in long-term prevention.
@@ -211,7 +208,7 @@ const WorldStrokeDay2025 = () => {
         <li>Keep your blood pressure, sugar, and cholesterol in check.</li>
         <li>Manage stress through yoga, meditation, or mindfulness.</li>
         <li>
-          Schedule regular <a className="underline font-semibold text-blue-600" href="https://myewacare.com/our-services#ourpackages">preventive health check-ups</a> to detect issues early.
+          Schedule regular <a target="_blank" className="underline font-semibold text-blue-600" href="https://myewacare.com/our-services#ourpackages">preventive health check-ups</a> to detect issues early.
         </li>
       </ul>
 

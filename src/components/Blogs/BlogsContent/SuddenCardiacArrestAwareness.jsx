@@ -74,11 +74,11 @@ const SuddenCardiacArrestAwareness = () => {
         smoking or poor diet.
       </p>
 
-      <div className="my-8">
+      <div className="my-8 mx-auto">
         <img
           src={warningImg}
-          alt="Warning signs of sudden cardiac arrest illustration"
-          className="w-4/5 max-w-2xl rounded-lg shadow-md"
+          alt="Symptoms of cardiac arrest"
+          className="w-4/5 max-w-2xl rounded-lg shadow-md mx-auto"
         />
       </div>
 
@@ -115,12 +115,14 @@ const SuddenCardiacArrestAwareness = () => {
         Awareness campaigns, such as:
       </p>
       <ul className="list-disc pl-6 mb-4">
-        <li>Cardiac Arrest Awareness Week 2025</li>
-        <li>World Heart Day 2025</li>
+        <li className="font-semibold">Cardiac Arrest Awareness Week 2025</li>
+        <li className="font-semibold">World Heart Day 2025</li>
       </ul>
       <p className="mb-4">
-        focus on educating the public about hands-only CPR and AED use. Key
-        statistics show that early CPR can double or triple survival rates.
+        focus on educating the public about{" "}
+        <span className="font-semibold">hands-only CPR </span> and{" "}
+        <span className="font-semibold">AED use</span>. <br /> Key statistics
+        show that early CPR can double or triple survival rates.{" "}
         <a
           href="https://myewacare.com/event"
           target="_blank"
@@ -145,27 +147,39 @@ const SuddenCardiacArrestAwareness = () => {
       <h2 className="text-2xl font-semibold mt-8 mb-3">
         Hands-Only CPR: Step by Step
       </h2>
+      <p className="mb-1">
+        Performing <span className="font-semibold">hands-only CPR</span> is
+        simple and highly effective:
+      </p>
       <ul className="list-decimal pl-6 mb-4">
         <li>
-          Call emergency services immediately – dial your local emergency
-          number.
+          <span className="font-semibold">
+            Call emergency services immediately
+          </span>{" "}
+          – dial your local emergency number.
         </li>
         <li>
-          Position your hands: Place the heel of one hand in the center of the
-          chest, with the other hand on top.
+          <span className="font-semibold">Position your hands </span>- Place the
+          heel of one hand in the center of the chest, with the other hand on
+          top.
         </li>
         <li>
-          Push hard and fast: Compress the chest at 100–120 compressions per
-          minute, allowing the full chest to recoil after each push.
+          <span className="font-semibold">Push hard and fast</span> - Compress
+          the chest at 100–120 compressions per minute, allowing the full chest
+          to recoil after each push.
         </li>
-        <li>Continue until help arrives, or the person begins to breathe.</li>
+        <li>
+          {" "}
+          <span className="font-semibold">Continue until help arrives,</span> or
+          the person begins to breathe.
+        </li>
       </ul>
 
-      <div className="my-8 ">
+      <div className="my-8 mx-auto">
         <img
           src={cprStepsImg}
-          alt="Hands-only CPR step-by-step guide illustration"
-          className="w-4/5 max-w-2xl rounded-lg shadow-md"
+          alt="How to perform CPR"
+          className="w-4/5 max-w-2xl rounded-lg shadow-md mx-auto"
         />
       </div>
       {/* H3 */}
@@ -224,25 +238,32 @@ const SuddenCardiacArrestAwareness = () => {
       <h2 className="text-2xl font-semibold mt-8 mb-3">
         Prevention and Heart Health Tips
       </h2>
+      <p className="mb-1">
+        Prevention is key to reducing the risk of sudden cardiac arrest. Follow
+        these <span className="font-semibold">heart health tips:</span>
+      </p>
       <ul className="list-disc pl-6 mb-4">
         <li>
-          Exercise regularly: 30 minutes of moderate activity daily improves
-          heart function.
+          <span className="font-semibold">Exercise regularly:</span> 30 minutes
+          of moderate activity daily improves heart function.
         </li>
         <li>
-          Eat a balanced diet: Include fruits, vegetables, whole grains, and
-          lean proteins.
+          <span className="font-semibold">Eat a balanced diet: </span>
+          Include fruits, vegetables, whole grains, and lean proteins.
         </li>
         <li>
-          Manage stress: Practice meditation, yoga, or relaxation techniques.
+          <span className="font-semibold">Manage stress: </span>
+          Practice meditation, yoga, or relaxation techniques.
         </li>
         <li>
-          Avoid smoking and excessive alcohol: Both increase the risk of heart
-          disease.
+          <span className="font-semibold">
+            Avoid smoking and excessive alcohol:{" "}
+          </span>
+          Both increase the risk of heart disease.
         </li>
         <li>
-          Get regular screenings: Blood pressure, cholesterol, and heart tests
-          are crucial.
+          <span className="font-semibold">Get regular screenings: </span>
+          Blood pressure, cholesterol, and heart tests are crucial.
         </li>
       </ul>
 
@@ -250,30 +271,36 @@ const SuddenCardiacArrestAwareness = () => {
       <h2 className="text-2xl font-semibold mt-8 mb-3">
         Real-Life Stories and Campaign Highlights
       </h2>
+      <p className="mb-1">
+        Real-life stories demonstrate the life-saving power of{" "}
+        <span className="font-semibold">CPR and AEDs</span>:
+      </p>
       <ul className="list-disc pl-6 mb-4">
         <li className="mb-4">
-          Real-life stories demonstrate the life-saving power of CPR and AEDs:
-        </li>
-        <li className="mb-4">
-          During the National Sudden Cardiac Arrest Awareness Campaign in India,
-          thousands were trained in hands-only CPR, and several lives were saved
-          by newly trained individuals.
+          During the{" "}
+          <span className="font-semibold">
+            National Sudden Cardiac Arrest Awareness Campaign in India,
+          </span>
+          thousands were trained in <span>hands-only CPR,</span> and several
+          lives were saved by newly trained individuals.
         </li>
         <li className="mb-4">
           Ordinary bystanders performing CPR have revived friends, family
           members, and strangers, highlighting the importance of public
           education.
         </li>
-        <li className="mb-4">
-          Sharing these stories raises cardiac arrest awareness and motivates
-          communities to participate in training and campaigns.
-        </li>
       </ul>
+        <p>
+          Sharing these stories raises{" "}
+          <span className="font-semibold">cardiac arrest awareness</span> and
+          motivates communities to participate in training and campaigns.
+        </p>
 
       {/* H2 */}
       <h2 className="text-2xl font-semibold mt-8 mb-3">
         How You Can Get Involved
       </h2>
+      <p className="mb-1">You can actively contribute By:</p>
       <ul className="list-disc pl-6 mb-4">
         <li>
           Enrolling in CPR and AED training, such as CPR training in Mumbai
