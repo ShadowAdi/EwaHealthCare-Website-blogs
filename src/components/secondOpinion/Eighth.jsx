@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import eight from "../../../public/images/secondOpinion/eight.png";
+import uploadLogo from "../../../public/images/secondOpinion/UploadMedIcon.svg";
 
 const Eighth = () => {
   const [name, setName] = useState("");
@@ -82,7 +83,20 @@ const Eighth = () => {
                   htmlFor="file-upload"
                   className="bg-white px-7 py-1 rounded-full cursor-pointer hover:bg-gray-100 transition-colors text-sm sm:text-base flex space-x-3 "
                 >
-                  <img  src="../../../public/images/secondOpinion/UploadMedIcon.svg" alt="image-upload-icon" className="mr-2"/>
+                  <svg
+                    width="9"
+                    height="14"
+                    viewBox="0 0 9 14"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M8.33573 0.499948H0.5M4.41786 3.69451L7.68275 7.00963M4.41786 3.69451L1.15298 7.00963M4.41786 3.69451V13.0371"
+                      stroke="#1E1028"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
                   Choose File
                 </label>
                 {file && (
@@ -91,9 +105,9 @@ const Eighth = () => {
                   </span>
                 )}
               </div>
-<p className="text-[10px] italic text-white ">
-    * Your information is confidential and securely stored.
-</p>
+              <p className="text-[10px] italic text-white ">
+                * Your information is confidential and securely stored.
+              </p>
               <div className="flex justify-center lg:justify-start">
                 <button
                   type="submit"
