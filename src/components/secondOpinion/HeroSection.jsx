@@ -28,7 +28,9 @@ const HeroSection = () => {
           </h1>
 
           <p className="text-sm sm:text-base md:text-lg text-center md:text-left text-[#0C1F30] font-medium leading-relaxed sm:leading-7 md:leading-[28px] max-w-2xl">
-            Access verified specialists to review your diagnosis, explore treatment options, and make confident healthcare decisions — all online.
+            Access verified specialists to review your diagnosis, explore
+            treatment options, and make confident healthcare decisions — all
+            online.
           </p>
 
           {/* 🔥 Modal Button */}
@@ -48,6 +50,21 @@ const HeroSection = () => {
           />
         </div>
       </section>
+      <div className="-full max-w-[1440px] mx-auto px-4 sm:px-10 flex flex-row py-3 overflow-x-hidden lg:items-center justify-between flex-1 space-x-6 bg-[#02989D]  items-center ">
+        <p className="text-lg text-white">
+          Exclusive at MyEwacare: Get your{" "}
+          <span className="font-semibold italic">
+            {" "}
+            medical reports reviewed <br /> for free{" "}
+          </span>{" "}
+          before your second opinion consultation.
+        </p>
+        <button className="px-6 py-4 rounded-full bg-white">
+          <span className="text-sm font-semibold text-[#242424]">
+            Request Your Second Opinion
+          </span>
+        </button>
+      </div>
 
       {/* 🔥 Reusable Modal */}
       <ScheduleDemoModal
