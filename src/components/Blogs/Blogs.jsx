@@ -80,7 +80,7 @@ const Blogs = () => {
   const [totalPages, setTotalPages] = useState(1);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-  const [rowsPerPage, setRowsPerPage] = useState(9); // Changed to 9 for better 3-column grid
+  const [rowsPerPage, setRowsPerPage] = useState(6); // Changed to 9 for better 3-column grid
   const [totalBlogs, setTotalBlogs] = useState(0);
 
   useEffect(() => {
