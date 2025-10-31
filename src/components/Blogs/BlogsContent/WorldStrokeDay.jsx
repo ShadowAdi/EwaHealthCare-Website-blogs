@@ -70,7 +70,7 @@ const WorldStrokeDay2025 = () => {
         <div className="my-8 mx-auto">
         <img
           src={Blog6New}
-          alt="FAST stroke symptoms"
+          alt="Types of brain stroke"
           className="w-4/5 max-w-2xl rounded-lg shadow-md mx-auto"
         />
       </div>
@@ -151,7 +151,7 @@ const WorldStrokeDay2025 = () => {
       <div className="my-8 mx-auto">
         <img
           src={secondImage}
-          alt="Types Of Brain Stroke"
+          alt="FAST stroke symptoms"
           className="w-4/5 max-w-2xl rounded-lg shadow-md mx-auto"
         />
       </div>
