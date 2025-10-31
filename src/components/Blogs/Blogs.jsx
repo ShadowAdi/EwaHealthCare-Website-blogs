@@ -80,26 +80,26 @@ const Blogs = () => {
   const [totalPages, setTotalPages] = useState(1);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-  const [rowsPerPage, setRowsPerPage] = useState(10);
+  const [rowsPerPage, setRowsPerPage] = useState(9); // Changed to 9 for better 3-column grid
+  const [totalBlogs, setTotalBlogs] = useState(0);
 
   useEffect(() => {
     fetchSuperBlogs();
-  }, [currentPage, rowsPerPage]);
+  }, []); // Only fetch once on component mount since we're handling pagination client-side for combined blogs
 
   const fetchSuperBlogs = async () => {
     setLoading(true);
     setError(null);
     try {
+      // Fetch all blogs at once (increase limit to get all blogs)
       const result = await handleApiRequest({
-        url: `/superblogs/grid?page=${currentPage}&rows=${rowsPerPage}`,
+        url: `/superblogs/grid?page=1&rows=1000`, // High limit to get all blogs
         method: "GET",
       });
 
       if (result.success) {
         setSuperBlogs(result.data.rows || []);
-        if (result.data?.total) {
-          setTotalPages(Math.ceil(result.data.total / rowsPerPage));
-        }
+        setTotalBlogs(result.data?.total || 0);
       } else {
         setError(result.error);
       }
@@ -111,10 +111,37 @@ const Blogs = () => {
   };
 
   const handlePageChange = (newPage) => {
-    setCurrentPage(newPage);
+    // Calculate totalCombinedPages here since it's computed inside render
+    const allBlogs = [
+      ...superBlogs.map((b) => ({
+        slug: b.slug || b._id,
+        title: b.title,
+        author: b.author,
+        date: b.date,
+        image: b.image,
+        isLocal: false,
+        dateObj: new Date(b.date),
+      })),
+      ...blogData.map((b) => ({
+        slug: b.slug,
+        title: b.title,
+        author: b.authorName,
+        date: b.date,
+        image: b.imageSrc,
+        isLocal: true,
+        dateObj: new Date(b.date),
+      })),
+    ];
+    const totalPages = Math.ceil(allBlogs.length / rowsPerPage);
+    
+    if (newPage >= 1 && newPage <= totalPages) {
+      setCurrentPage(newPage);
+      // Scroll to top when changing pages
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
   };
 
-  // ✅ Merge backend + local blogs
+  // ✅ Merge backend + local blogs and sort by date (latest first)
   const combinedBlogs = [
     ...superBlogs.map((b) => ({
       slug: b.slug || b._id,
@@ -123,6 +150,7 @@ const Blogs = () => {
       date: b.date,
       image: b.image,
       isLocal: false,
+      dateObj: new Date(b.date),
     })),
     ...blogData.map((b) => ({
       slug: b.slug,
@@ -131,8 +159,15 @@ const Blogs = () => {
       date: b.date,
       image: b.imageSrc,
       isLocal: true,
+      dateObj: new Date(b.date),
     })),
-  ];
+  ].sort((a, b) => b.dateObj - a.dateObj); // Sort by date descending (latest first)
+
+  // Calculate pagination for combined blogs
+  const startIndex = (currentPage - 1) * rowsPerPage;
+  const endIndex = startIndex + rowsPerPage;
+  const paginatedBlogs = combinedBlogs.slice(startIndex, endIndex);
+  const totalCombinedPages = Math.ceil(combinedBlogs.length / rowsPerPage);
 
   if (loading && superBlogs.length === 0) {
     return (
@@ -172,44 +207,140 @@ const Blogs = () => {
           </div>
         </div>
 
-        {/* ✅ Combined Blogs Grid */}
+        {/* ✅ Blog Controls */}
         <div className="p-6 w-full">
-          <div className="grid grid-cols-1 min-[640px]:grid-cols-2 min-[800px]:grid-cols-3 gap-x-8 gap-y-16">
-            {combinedBlogs.map((blog) => (
-              <div key={blog.slug} className="p-4 cursor-pointer">
-                <BlogCard
-                  slug={blog.slug}
-                  title={blog.title}
-                  author={blog.author}
-                  date={blog.date}
-                  image={blog.image}
-                  isLocal={blog.isLocal}
-                />
-              </div>
-            ))}
+          <div className="flex flex-col sm:flex-row justify-between items-center mb-8 gap-4">
+            <div className="flex items-center gap-4">
+              <span className="text-sm text-gray-600">Blogs per page:</span>
+              <select
+                value={rowsPerPage}
+                onChange={(e) => {
+                  setRowsPerPage(Number(e.target.value));
+                  setCurrentPage(1); // Reset to first page when changing page size
+                }}
+                className="px-3 py-1 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-primary/50"
+              >
+                <option value={6}>6</option>
+                <option value={9}>9</option>
+                <option value={12}>12</option>
+                <option value={18}>18</option>
+              </select>
+            </div>
+            <div className="text-sm text-gray-600">
+              Showing {startIndex + 1}-{Math.min(endIndex, combinedBlogs.length)} of {combinedBlogs.length} blogs
+            </div>
           </div>
+
+          {/* ✅ Combined Blogs Grid */}
+          {loading && combinedBlogs.length === 0 ? (
+            <div className="grid grid-cols-1 min-[640px]:grid-cols-2 min-[800px]:grid-cols-3 gap-x-8 gap-y-16">
+              {Array.from({ length: rowsPerPage }, (_, i) => (
+                <div key={i} className="p-4">
+                  <div className="animate-pulse">
+                    <div className="h-[180px] md:h-[200px] bg-gray-300 rounded-xl mb-4"></div>
+                    <div className="h-6 bg-gray-300 rounded mb-2"></div>
+                    <div className="h-4 bg-gray-300 rounded w-3/4"></div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 min-[640px]:grid-cols-2 min-[800px]:grid-cols-3 gap-x-8 gap-y-16">
+              {paginatedBlogs.map((blog) => (
+                <div key={blog.slug} className="p-4 cursor-pointer">
+                  <BlogCard
+                    slug={blog.slug}
+                    title={blog.title}
+                    author={blog.author}
+                    date={blog.date}
+                    image={blog.image}
+                    isLocal={blog.isLocal}
+                  />
+                </div>
+              ))}
+            </div>
+          )}
+
+          {/* Empty State */}
+          {paginatedBlogs.length === 0 && !loading && (
+            <div className="text-center py-12">
+              <p className="text-gray-500 text-lg">No blogs available at the moment.</p>
+            </div>
+          )}
         </div>
 
-        {/* ✅ Pagination */}
-        <div className="flex justify-center items-center gap-4 mt-8">
-          <button
-            onClick={() => handlePageChange(currentPage - 1)}
-            disabled={currentPage === 1 || loading}
-            className="px-4 py-2 bg-gray-200 rounded disabled:opacity-50"
-          >
-            Previous
-          </button>
-          <span>
-            Page {currentPage} of {totalPages}
-          </span>
-          <button
-            onClick={() => handlePageChange(currentPage + 1)}
-            disabled={currentPage === totalPages || loading}
-            className="px-4 py-2 bg-gray-200 rounded disabled:opacity-50"
-          >
-            Next
-          </button>
-        </div>
+        {/* ✅ Enhanced Pagination */}
+        {totalCombinedPages > 1 && (
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mt-8">
+            <div className="flex items-center gap-2">
+              <button
+                onClick={() => handlePageChange(1)}
+                disabled={currentPage === 1 || loading}
+                className="px-3 py-2 bg-gray-200 hover:bg-gray-300 rounded disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+              >
+                First
+              </button>
+              <button
+                onClick={() => handlePageChange(currentPage - 1)}
+                disabled={currentPage === 1 || loading}
+                className="px-4 py-2 bg-gray-200 hover:bg-gray-300 rounded disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+              >
+                Previous
+              </button>
+            </div>
+
+            <div className="flex items-center gap-2">
+              {/* Page Numbers */}
+              {Array.from({ length: Math.min(5, totalCombinedPages) }, (_, i) => {
+                let pageNum;
+                if (totalCombinedPages <= 5) {
+                  pageNum = i + 1;
+                } else if (currentPage <= 3) {
+                  pageNum = i + 1;
+                } else if (currentPage >= totalCombinedPages - 2) {
+                  pageNum = totalCombinedPages - 4 + i;
+                } else {
+                  pageNum = currentPage - 2 + i;
+                }
+
+                return (
+                  <button
+                    key={pageNum}
+                    onClick={() => handlePageChange(pageNum)}
+                    className={`px-3 py-2 rounded transition-colors ${
+                      currentPage === pageNum
+                        ? 'bg-primary text-white'
+                        : 'bg-gray-200 hover:bg-gray-300'
+                    }`}
+                  >
+                    {pageNum}
+                  </button>
+                );
+              })}
+            </div>
+
+            <div className="flex items-center gap-2">
+              <button
+                onClick={() => handlePageChange(currentPage + 1)}
+                disabled={currentPage === totalCombinedPages || loading}
+                className="px-4 py-2 bg-gray-200 hover:bg-gray-300 rounded disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+              >
+                Next
+              </button>
+              <button
+                onClick={() => handlePageChange(totalCombinedPages)}
+                disabled={currentPage === totalCombinedPages || loading}
+                className="px-3 py-2 bg-gray-200 hover:bg-gray-300 rounded disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+              >
+                Last
+              </button>
+            </div>
+
+            <span className="text-sm text-gray-600 mt-2 sm:mt-0">
+              Page {currentPage} of {totalCombinedPages}
+            </span>
+          </div>
+        )}
       </div>
     </>
   );
