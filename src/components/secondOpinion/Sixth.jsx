@@ -101,8 +101,8 @@ const Sixth = () => {
                       <h3 className="text-white text-xl font-semibold">
                         {testimonials[currentIndex].name}
                       </h3>
-                      <p className="text-white/90 text-base leading-relaxed italic">
-                        “{testimonials[currentIndex].quote}”
+                      <p className="text-white/90 text-base leading-relaxed ">
+                        {testimonials[currentIndex].quote}
                       </p>
                     </div>
                   </div>
