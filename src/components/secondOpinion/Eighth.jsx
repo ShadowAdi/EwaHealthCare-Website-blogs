@@ -32,7 +32,7 @@ const Eighth = () => {
               "linear-gradient(102.57deg, #1FA2A7 0%, #15A1A6 35%, #008488 70%, #017175 100%)",
           }}
         >
-          <div className="w-full lg:w-[70%]  pl-12 py-6">
+          <div className="w-full lg:w-[70%]   px-4 md:pl-12 md:px-0  py-6">
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-6 sm:mb-8 text-center lg:text-left">
               Get Your Expert Second Opinion Today
             </h2>
@@ -65,7 +65,7 @@ const Eighth = () => {
                 />
               </div>
 
-              <div className="flex flex-col sm:flex-row items-center sm:items-center sm:space-x-4 bg-[#1FA2A7] border border-white rounded-xl p-3 sm:p-4 w-full sm:w-fit">
+              <div className="flex flex-col sm:flex-row items-center sm:items-center space-x-2 sm:space-x-4 bg-[#1FA2A7] border border-white rounded-xl p-3 sm:p-4 w-full sm:w-fit">
                 <label
                   htmlFor="file-upload"
                   className="text-white text-sm sm:text-base mb-2 sm:mb-0"
@@ -81,7 +81,7 @@ const Eighth = () => {
                 />
                 <label
                   htmlFor="file-upload"
-                  className="bg-white px-7 py-1 rounded-full cursor-pointer hover:bg-gray-100 transition-colors text-sm sm:text-base flex space-x-3 "
+                  className="bg-white px-7 py-1 rounded-full cursor-pointer hover:bg-gray-100 transition-colors text-xs sm:text-base flex space-x-3 items-center "
                 >
                   <svg
                     width="9"
@@ -97,10 +97,12 @@ const Eighth = () => {
                       stroke-linejoin="round"
                     />
                   </svg>
+                  <span>
                   Choose File
+                  </span>
                 </label>
                 {file && (
-                  <span className="text-sm text-gray-200 mt-2 sm:mt-0 sm:ml-2">
+                  <span className="text-xs md:text-sm text-gray-200 mt-2 sm:mt-0 sm:ml-2">
                     {file.name}
                   </span>
                 )}
@@ -119,7 +121,7 @@ const Eighth = () => {
             </form>
           </div>
 
-          <div className="w-full lg:w-[30%] flex justify-end">
+          <div className="w-full  lg:w-[30%] hidden  sm:flex justify-end">
             <img
               src={eight}
               alt="Expert Doctor"

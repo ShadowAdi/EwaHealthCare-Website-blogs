@@ -29,7 +29,7 @@ const ContactForm = () => {
               "linear-gradient(102.57deg, #1FA2A7 0%, #15A1A6 35%, #008488 70%, #017175 100%)",
           }}
         >
-          <div className="w-full lg:w-[70%]  pl-12 py-6">
+          <div className="w-full lg:w-[70%]   px-4 md:pl-12 md:px-0  py-6">
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-6 sm:mb-8 text-center lg:text-left">
               Get Your Expert Multispeciality Surgery Consultations 
             </h2>
@@ -62,16 +62,16 @@ const ContactForm = () => {
                 />
               </div>
 
-              <div className="flex flex-col sm:flex-row items-center sm:items-center sm:space-x-4 rounded-xl w-full sm:w-full">
+              <div className="flex flex-col sm:flex-row items-center sm:items-center sm:space-x-4 rounded-xl w-full sm:w-full space-y-2 sm:space-y-0 ">
                 <input
                   type="text"
                   placeholder="Brief Medical Concern"
                   value={concern}
                   onChange={(e) => setConcern(e.target.value)}
-                  className=" p-3 sm:p-4 bg-[#1FA2A7] border border-white placeholder-white text-white rounded-xl focus:ring-2 focus:ring-cyan-500 focus:border-transparent focus:outline-transparent w-[40%]"
+                  className=" p-3 sm:p-4 bg-[#1FA2A7] border border-white placeholder-white text-white rounded-xl focus:ring-2 focus:ring-cyan-500 focus:border-transparent focus:outline-transparent w-full sm:w-[40%]"
                   required
                 />
-                <div className="flex w-[60%] items-center justify-around space-x-0.5  p-2 sm:p-3 px-0 sm:px-0 bg-[#1FA2A7] border border-white placeholder-white text-black rounded-xl focus:ring-2 focus:ring-cyan-500 focus:border-transparent focus:outline-transparent">
+                <div className="flex w-full sm:w-[60%] items-center  justify-around space-x-0.5  p-2 sm:p-3 px-0 sm:px-0 bg-[#1FA2A7] border border-white placeholder-white text-black rounded-xl focus:ring-2 focus:ring-cyan-500 focus:border-transparent focus:outline-transparent">
                   <label
                     htmlFor="file-upload"
                     className="text-white text-sm sm:text-base mb-2 sm:mb-0 "
@@ -104,9 +104,9 @@ const ContactForm = () => {
                 </div>
               </div>
 
-<p className="text-[10px] italic text-white ">
-    * Your information is confidential and securely stored.
-</p>
+              <p className="text-[10px] italic text-white ">
+                * Your information is confidential and securely stored.
+              </p>
               <div className="flex justify-center lg:justify-start">
                 <button
                   type="submit"
@@ -116,10 +116,9 @@ const ContactForm = () => {
                 </button>
               </div>
             </form>
-        
           </div>
 
-          <div className="w-full lg:w-[30%] flex justify-end">
+          <div className="w-full  lg:w-[30%] hidden  sm:flex justify-end">
             <img
               src={eight}
               alt="Expert Doctor"
